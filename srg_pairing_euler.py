@@ -1,4 +1,4 @@
-# This version replaces the python odeint to 1st-order Euler step method
+# This version replaces the python odeint in srg_pairing.py to 1st-order Euler step method
 # Ruxin Zhang, June 2019
 # ------------------------------------------------------------------------------
 
