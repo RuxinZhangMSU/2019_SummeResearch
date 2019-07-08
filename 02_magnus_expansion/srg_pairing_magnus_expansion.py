@@ -67,7 +67,11 @@ def magnus(y0,flowparams,kmax,step,args=()):
             j = j + 1
         omega[0] = omega[1]
 
-    return a[len(a)-1]
+#TURN ON WHEN CALCULATING KMAX
+ #   return a[len(a)-1]
+
+    return a
+
 
 #--------------------------------------------------------------
 # Main program
@@ -89,7 +93,7 @@ def main():
     flowparams = array([0., 0.001, 0.01, 0.05, 0.1, 1., 5., 10.])
 
     # truncation
-    kmax = 10
+    kmax = 8
 
     # integrate flow equations - odeint returns an array of solutions,
     # which are 1d arrays themselves
@@ -107,8 +111,8 @@ def main():
         data.append(diag(h))
     data = zip(*data)
 
-#   plot_snapshots(Hs, flowparams, delta, g, 1)
-#   plot_diagonals(data, eigenvalues, flowparams, delta, g)
+    plot_snapshots(Hs, flowparams, delta, g, 1)
+    plot_diagonals(data, eigenvalues, flowparams, delta, g)
 
  # TURN ON WHEN Evaluating the effect of kmax on H(10)
  #   ys = np.zeros((5, dim*dim))
